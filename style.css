@@ -707,6 +707,217 @@ body {
   }
 }
 
+/* 动画剧场 */
+.animation-theater {
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+.theater-container {
+  max-width: 350px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px 20px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-height: 380px;
+  position: relative;
+  overflow: visible;
+}
+
+.theater-title {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #764ba2;
+  margin-bottom: 30px;
+}
+
+.character {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 小粉猪 */
+.pink-pig {
+  left: 20px;
+  bottom: 20px;
+  animation: pigShake 6s infinite;
+}
+
+.pig-body {
+  font-size: 4em;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes pigShake {
+  0%, 20% {
+    transform: translateX(0) rotate(0deg);
+  }
+  40% {
+    transform: translateX(-10px) rotate(-180deg);
+  }
+  45% {
+    transform: translateX(5px) rotate(-360deg);
+  }
+  50% {
+    transform: translateX(-3px) rotate(-370deg);
+  }
+  55% {
+    transform: translateX(2px) rotate(-360deg);
+  }
+  60%, 100% {
+    transform: translateX(0) rotate(-360deg);
+  }
+}
+
+/* 黄色小狗 */
+.yellow-dog {
+  right: -100px;
+  bottom: 20px;
+  animation: dogJumpIn 6s infinite;
+}
+
+.dog-body {
+  font-size: 4em;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes dogJumpIn {
+  0%, 15% {
+    right: -100px;
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    right: -50px;
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  25% {
+    right: 20px;
+    transform: translateY(0) rotate(0deg);
+  }
+  70%, 100% {
+    right: 20px;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* 对话气泡 */
+.speech-bubble {
+  position: absolute;
+  background: white;
+  border-radius: 15px;
+  padding: 12px 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  font-size: 0.85em;
+  font-weight: bold;
+  line-height: 1.5;
+  z-index: 10;
+  word-wrap: break-word;
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.pig-bubble {
+  bottom: 95px;
+  left: -10px;
+  color: #ff69b4;
+}
+
+.pig-bubble::before {
+  bottom: -10px;
+  left: 20px;
+  border-width: 10px 10px 0 10px;
+  border-color: white transparent transparent transparent;
+}
+
+.dog-bubble {
+  bottom: 95px;
+  right: -10px;
+  color: #ff6b00;
+}
+
+.dog-bubble::before {
+  bottom: -10px;
+  right: 20px;
+  border-width: 10px 10px 0 10px;
+  border-color: white transparent transparent transparent;
+}
+
+.bubble-text {
+  display: block;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* 猪猪的两句话 */
+.pig-bubble .bubble-1 {
+  animation: showText 1s 0.5s forwards, hideText 1s 2.5s forwards;
+}
+
+.pig-bubble .bubble-2 {
+  animation: showText 1s 3.5s forwards;
+}
+
+/* 小狗的话 */
+.dog-bubble .bubble-text {
+  animation: showText 1s 2s forwards;
+}
+
+@keyframes showText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 击打效果 */
+.punch-effect {
+  position: absolute;
+  font-size: 2.5em;
+  top: -10px;
+  left: -60px;
+  opacity: 0;
+  animation: punchShow 6s infinite;
+}
+
+@keyframes punchShow {
+  0%, 37% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  39% {
+    opacity: 1;
+    transform: scale(2) rotate(20deg);
+  }
+  41% {
+    opacity: 1;
+    transform: scale(1.8) rotate(-15deg);
+  }
+  43% {
+    opacity: 0;
+    transform: scale(0.5) rotate(30deg);
+  }
+  45%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+}   transform: scale(0.5) rotate(-20deg);
+  }
+  50%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+}
+
 /* 页脚 */
 .footer {
   text-align: center;
@@ -845,6 +1056,65 @@ body {
   .tree-message {
     font-size: 1em;
   }
+  
+  .theater-container {
+    max-width: 100%;
+    padding: 20px 15px 25px;
+    min-height: 350px;
+  }
+  
+  .theater-title {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+  }
+  
+  .pig-body, .dog-body {
+    font-size: 3em;
+  }
+  
+  .pink-pig {
+    left: 15px;
+    bottom: 15px;
+  }
+  
+  .yellow-dog {
+    bottom: 15px;
+  }
+  
+  .speech-bubble {
+    font-size: 0.75em;
+    padding: 10px 12px;
+    max-width: 160px;
+  }
+  
+  .pig-bubble {
+    bottom: 80px;
+    left: -5px;
+  }
+  
+  .dog-bubble {
+    bottom: 80px;
+    right: -5px;
+  }
+  
+  @keyframes dogJumpIn {
+    0%, 15% {
+      right: -100px;
+      transform: translateY(0) rotate(0deg);
+    }
+    20% {
+      right: -50px;
+      transform: translateY(-30px) rotate(-10deg);
+    }
+    25% {
+      right: 15px;
+      transform: translateY(0) rotate(0deg);
+    }
+    70%, 100% {
+      right: 15px;
+      transform: translateY(0) rotate(0deg);
+    }
+  }
 }
 
 /* 横屏适配 */
@@ -856,5 +1126,4 @@ body {
   .header {
     padding: 15px;
   }
-}
 }
