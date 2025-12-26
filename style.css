@@ -556,9 +556,9 @@ body {
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  padding: 25px 20px 30px;
+  padding: 20px 20px 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  min-height: 400px;
+  min-height: 320px;
   position: relative;
   overflow: visible;
 }
@@ -695,7 +695,7 @@ body {
   font-size: 1.3em;
   font-weight: bold;
   color: #764ba2;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 10;
 }
@@ -728,17 +728,17 @@ body {
     transform: translateX(-50%) rotate(0deg);
     z-index: 5;
   }
-  35%, 40% {
+  30%, 33% {
     left: 50%;
     transform: translateX(-50%) rotate(-180deg);
     z-index: 5;
   }
-  45% {
+  38% {
     left: 20px;
     transform: translateX(0) rotate(-360deg);
     z-index: 2;
   }
-  50%, 100% {
+  40%, 100% {
     left: 20px;
     transform: translateX(0) rotate(-360deg);
     z-index: 2;
@@ -759,22 +759,22 @@ body {
 }
 
 @keyframes dogJumpToCenter {
-  0%, 25% {
+  0%, 20% {
     right: -100px;
     transform: translateY(0) rotate(0deg);
     z-index: 3;
   }
-  30% {
+  25% {
     right: -20px;
     transform: translateY(-30px) rotate(-15deg);
     z-index: 3;
   }
-  35% {
+  30% {
     right: 50%;
     transform: translateX(50%) translateY(0) rotate(0deg);
     z-index: 10;
   }
-  40%, 100% {
+  35%, 100% {
     right: 50%;
     transform: translateX(50%) translateY(0) rotate(0deg);
     z-index: 10;
@@ -786,12 +786,12 @@ body {
   position: absolute;
   background: white;
   border-radius: 15px;
-  padding: 12px 16px;
+  padding: 8px 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   max-width: 200px;
   font-size: 0.85em;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.4;
   z-index: 10;
   word-wrap: break-word;
 }
@@ -805,7 +805,7 @@ body {
 }
 
 .pig-bubble {
-  bottom: 95px;
+  bottom: 70px;
   left: -10px;
   color: #ff69b4;
 }
@@ -818,7 +818,7 @@ body {
 }
 
 .dog-bubble {
-  bottom: 95px;
+  bottom: 70px;
   right: -10px;
   color: #ff6b00;
 }
@@ -834,25 +834,42 @@ body {
   display: block;
   opacity: 0;
   animation-fill-mode: forwards;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.bubble-text.bubble-1,
+.bubble-text.bubble-2,
+.bubble-text.bubble-3 {
+  animation-fill-mode: forwards;
 }
 
 /* 猪猪的两句话 */
 .pig-bubble .bubble-1 {
-  animation: showText 1s 0.5s forwards, hideText 0.5s 2.8s forwards;
+  animation: showTextWithHeight 1s 0.5s forwards, hideTextWithHeight 0.5s 2.3s forwards;
 }
 
 .pig-bubble .bubble-3 {
-  animation: showText 1s 4.5s forwards;
+  animation: showTextWithHeight 1s 4s forwards;
 }
 
 /* 小狗的话 */
 .dog-bubble .bubble-2 {
-  animation: showText 1s 3.2s forwards;
+  animation: showTextWithHeight 1s 2.6s forwards;
 }
 
-@keyframes showText {
+@keyframes showTextWithHeight {
   to {
     opacity: 1;
+    height: auto;
+  }
+}
+
+@keyframes hideTextWithHeight {
+  to {
+    opacity: 0;
+    height: 0;
   }
 }
 
@@ -863,27 +880,27 @@ body {
   top: -10px;
   left: -60px;
   opacity: 0;
-  animation: punchShow 6s infinite;
+  animation: punchShow 8s infinite;
 }
 
 @keyframes punchShow {
-  0%, 32% {
+  0%, 28% {
     opacity: 0;
     transform: scale(0) rotate(0deg);
   }
-  35% {
+  30% {
     opacity: 1;
     transform: scale(2) rotate(20deg);
   }
-  37% {
+  32% {
     opacity: 1;
     transform: scale(1.8) rotate(-15deg);
   }
-  40% {
+  34% {
     opacity: 0;
     transform: scale(0.5) rotate(30deg);
   }
-  42%, 100% {
+  36%, 100% {
     opacity: 0;
     transform: scale(0) rotate(0deg);
   }
@@ -892,14 +909,6 @@ body {
 @keyframes hideText {
   to {
     opacity: 0;
-  }
-}
-  }
-}   transform: scale(0.5) rotate(-20deg);
-  }
-  50%, 100% {
-    opacity: 0;
-    transform: scale(0) rotate(0deg);
   }
 }
 
@@ -1044,8 +1053,8 @@ body {
   
   .theater-container {
     max-width: 100%;
-    padding: 20px 15px 25px;
-    min-height: 370px;
+    padding: 18px 15px 20px;
+    min-height: 300px;
   }
   
   .background-tree .tree {
@@ -1177,17 +1186,17 @@ body {
   
   .speech-bubble {
     font-size: 0.75em;
-    padding: 10px 12px;
+    padding: 6px 10px;
     max-width: 160px;
   }
   
   .pig-bubble {
-    bottom: 75px;
+    bottom: 65px;
     left: -5px;
   }
   
   .dog-bubble {
-    bottom: 75px;
+    bottom: 65px;
     right: -5px;
   }
 }
