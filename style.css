@@ -545,45 +545,49 @@ body {
   }
 }
 
-/* 圣诞树 */
-.christmas-tree-section {
+/* 动画剧场 */
+.animation-theater {
   margin: 40px 0;
   padding: 20px 0;
 }
 
-.tree-container {
-  max-width: 300px;
+.theater-container {
+  max-width: 350px;
   margin: 0 auto;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px 20px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-height: 400px;
+  position: relative;
+  overflow: visible;
 }
 
-.tree {
+/* 背景圣诞树 */
+.background-tree {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.background-tree .tree {
   position: relative;
   margin: 0 auto;
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: treeGrow 1s ease-out;
 }
 
-@keyframes treeGrow {
-  from {
-    opacity: 0;
-    transform: scale(0.5) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.star-top {
-  font-size: 2em;
+.background-tree .star-top {
+  font-size: 2.5em;
   margin-bottom: 5px;
   animation: starTwinkle 1.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px gold);
 }
 
 @keyframes starTwinkle {
@@ -597,81 +601,80 @@ body {
   }
 }
 
-.tree-part {
+.background-tree .tree-part {
   width: 0;
   height: 0;
   border-style: solid;
   margin: -8px 0;
 }
 
-.tree-1 {
-  border-width: 0 30px 40px 30px;
+.background-tree .tree-1 {
+  border-width: 0 35px 45px 35px;
   border-color: transparent transparent #2d5016 transparent;
 }
 
-.tree-2 {
-  border-width: 0 45px 50px 45px;
+.background-tree .tree-2 {
+  border-width: 0 55px 60px 55px;
   border-color: transparent transparent #357a1f transparent;
 }
 
-.tree-3 {
-  border-width: 0 60px 60px 60px;
+.background-tree .tree-3 {
+  border-width: 0 75px 75px 75px;
   border-color: transparent transparent #3d8b24 transparent;
 }
 
-.tree-4 {
-  border-width: 0 75px 70px 75px;
+.background-tree .tree-4 {
+  border-width: 0 95px 90px 95px;
   border-color: transparent transparent #4a9d2e transparent;
 }
 
-.tree-trunk {
-  width: 30px;
-  height: 40px;
+.background-tree .tree-trunk {
+  width: 40px;
+  height: 50px;
   background: linear-gradient(to bottom, #6b4423, #4d2f1a);
   border-radius: 5px;
   margin-top: -5px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.ornament {
+.background-tree .ornament {
   position: absolute;
-  font-size: 1.2em;
+  font-size: 1.5em;
   animation: ornamentSwing 2s ease-in-out infinite;
 }
 
-.ornament-1 {
-  top: 60px;
-  left: 85px;
+.background-tree .ornament-1 {
+  top: 70px;
+  left: 105px;
   animation-delay: 0s;
 }
 
-.ornament-2 {
-  top: 80px;
-  right: 70px;
+.background-tree .ornament-2 {
+  top: 95px;
+  right: 85px;
   animation-delay: 0.3s;
 }
 
-.ornament-3 {
-  top: 110px;
-  left: 55px;
+.background-tree .ornament-3 {
+  top: 135px;
+  left: 65px;
   animation-delay: 0.6s;
 }
 
-.ornament-4 {
-  top: 130px;
-  right: 50px;
+.background-tree .ornament-4 {
+  top: 165px;
+  right: 60px;
   animation-delay: 0.9s;
 }
 
-.ornament-5 {
-  top: 160px;
-  left: 35px;
+.background-tree .ornament-5 {
+  top: 205px;
+  left: 40px;
   animation-delay: 1.2s;
 }
 
-.ornament-6 {
-  top: 160px;
-  right: 30px;
+.background-tree .ornament-6 {
+  top: 205px;
+  right: 35px;
   animation-delay: 1.5s;
 }
 
@@ -687,50 +690,14 @@ body {
   }
 }
 
-.tree-message {
-  margin-top: 20px;
-  font-size: 1.1em;
-  color: white;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: messageSlide 1s ease-out 0.5s backwards;
-}
-
-@keyframes messageSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 动画剧场 */
-.animation-theater {
-  margin: 40px 0;
-  padding: 20px 0;
-}
-
-.theater-container {
-  max-width: 350px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 25px 20px 30px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  min-height: 380px;
-  position: relative;
-  overflow: visible;
-}
-
 .theater-title {
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;
   color: #764ba2;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .character {
@@ -738,13 +705,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 20;
 }
 
 /* 小粉猪 */
 .pink-pig {
-  left: 20px;
+  left: 50%;
   bottom: 20px;
-  animation: pigShake 6s infinite;
+  transform: translateX(-50%);
+  animation: pigMovement 8s infinite;
+  z-index: 5;
 }
 
 .pig-body {
@@ -752,24 +722,26 @@ body {
   filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
-@keyframes pigShake {
+@keyframes pigMovement {
   0%, 20% {
-    transform: translateX(0) rotate(0deg);
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    z-index: 5;
   }
-  40% {
-    transform: translateX(-10px) rotate(-180deg);
+  35%, 40% {
+    left: 50%;
+    transform: translateX(-50%) rotate(-180deg);
+    z-index: 5;
   }
   45% {
-    transform: translateX(5px) rotate(-360deg);
-  }
-  50% {
-    transform: translateX(-3px) rotate(-370deg);
-  }
-  55% {
-    transform: translateX(2px) rotate(-360deg);
-  }
-  60%, 100% {
+    left: 20px;
     transform: translateX(0) rotate(-360deg);
+    z-index: 2;
+  }
+  50%, 100% {
+    left: 20px;
+    transform: translateX(0) rotate(-360deg);
+    z-index: 2;
   }
 }
 
@@ -777,7 +749,8 @@ body {
 .yellow-dog {
   right: -100px;
   bottom: 20px;
-  animation: dogJumpIn 6s infinite;
+  animation: dogJumpToCenter 8s infinite;
+  z-index: 3;
 }
 
 .dog-body {
@@ -785,22 +758,26 @@ body {
   filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
-@keyframes dogJumpIn {
-  0%, 15% {
+@keyframes dogJumpToCenter {
+  0%, 25% {
     right: -100px;
     transform: translateY(0) rotate(0deg);
+    z-index: 3;
   }
-  20% {
-    right: -50px;
-    transform: translateY(-30px) rotate(-10deg);
+  30% {
+    right: -20px;
+    transform: translateY(-30px) rotate(-15deg);
+    z-index: 3;
   }
-  25% {
-    right: 20px;
-    transform: translateY(0) rotate(0deg);
+  35% {
+    right: 50%;
+    transform: translateX(50%) translateY(0) rotate(0deg);
+    z-index: 10;
   }
-  70%, 100% {
-    right: 20px;
-    transform: translateY(0) rotate(0deg);
+  40%, 100% {
+    right: 50%;
+    transform: translateX(50%) translateY(0) rotate(0deg);
+    z-index: 10;
   }
 }
 
@@ -861,16 +838,16 @@ body {
 
 /* 猪猪的两句话 */
 .pig-bubble .bubble-1 {
-  animation: showText 1s 0.5s forwards, hideText 1s 2.5s forwards;
+  animation: showText 1s 0.5s forwards, hideText 0.5s 2.8s forwards;
 }
 
-.pig-bubble .bubble-2 {
-  animation: showText 1s 3.5s forwards;
+.pig-bubble .bubble-3 {
+  animation: showText 1s 4.5s forwards;
 }
 
 /* 小狗的话 */
-.dog-bubble .bubble-text {
-  animation: showText 1s 2s forwards;
+.dog-bubble .bubble-2 {
+  animation: showText 1s 3.2s forwards;
 }
 
 @keyframes showText {
@@ -890,25 +867,33 @@ body {
 }
 
 @keyframes punchShow {
-  0%, 37% {
+  0%, 32% {
     opacity: 0;
     transform: scale(0) rotate(0deg);
   }
-  39% {
+  35% {
     opacity: 1;
     transform: scale(2) rotate(20deg);
   }
-  41% {
+  37% {
     opacity: 1;
     transform: scale(1.8) rotate(-15deg);
   }
-  43% {
+  40% {
     opacity: 0;
     transform: scale(0.5) rotate(30deg);
   }
-  45%, 100% {
+  42%, 100% {
     opacity: 0;
     transform: scale(0) rotate(0deg);
+  }
+}
+
+@keyframes hideText {
+  to {
+    opacity: 0;
+  }
+}
   }
 }   transform: scale(0.5) rotate(-20deg);
   }
@@ -1060,7 +1045,71 @@ body {
   .theater-container {
     max-width: 100%;
     padding: 20px 15px 25px;
-    min-height: 350px;
+    min-height: 370px;
+  }
+  
+  .background-tree .tree {
+    width: 200px;
+    height: 240px;
+  }
+  
+  .background-tree .star-top {
+    font-size: 2em;
+  }
+  
+  .background-tree .tree-1 {
+    border-width: 0 28px 36px 28px;
+  }
+  
+  .background-tree .tree-2 {
+    border-width: 0 44px 48px 44px;
+  }
+  
+  .background-tree .tree-3 {
+    border-width: 0 60px 60px 60px;
+  }
+  
+  .background-tree .tree-4 {
+    border-width: 0 76px 72px 76px;
+  }
+  
+  .background-tree .tree-trunk {
+    width: 32px;
+    height: 40px;
+  }
+  
+  .background-tree .ornament {
+    font-size: 1.2em;
+  }
+  
+  .background-tree .ornament-1 {
+    top: 56px;
+    left: 84px;
+  }
+  
+  .background-tree .ornament-2 {
+    top: 76px;
+    right: 68px;
+  }
+  
+  .background-tree .ornament-3 {
+    top: 108px;
+    left: 52px;
+  }
+  
+  .background-tree .ornament-4 {
+    top: 132px;
+    right: 48px;
+  }
+  
+  .background-tree .ornament-5 {
+    top: 164px;
+    left: 32px;
+  }
+  
+  .background-tree .ornament-6 {
+    top: 164px;
+    right: 28px;
   }
   
   .theater-title {
@@ -1073,12 +1122,57 @@ body {
   }
   
   .pink-pig {
-    left: 15px;
     bottom: 15px;
+  }
+  
+  @keyframes pigMovement {
+    0%, 20% {
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      z-index: 5;
+    }
+    35%, 40% {
+      left: 50%;
+      transform: translateX(-50%) rotate(-180deg);
+      z-index: 5;
+    }
+    45% {
+      left: 15px;
+      transform: translateX(0) rotate(-360deg);
+      z-index: 2;
+    }
+    50%, 100% {
+      left: 15px;
+      transform: translateX(0) rotate(-360deg);
+      z-index: 2;
+    }
   }
   
   .yellow-dog {
     bottom: 15px;
+  }
+  
+  @keyframes dogJumpToCenter {
+    0%, 25% {
+      right: -100px;
+      transform: translateY(0) rotate(0deg);
+      z-index: 3;
+    }
+    30% {
+      right: -20px;
+      transform: translateY(-25px) rotate(-15deg);
+      z-index: 3;
+    }
+    35% {
+      right: 50%;
+      transform: translateX(50%) translateY(0) rotate(0deg);
+      z-index: 10;
+    }
+    40%, 100% {
+      right: 50%;
+      transform: translateX(50%) translateY(0) rotate(0deg);
+      z-index: 10;
+    }
   }
   
   .speech-bubble {
@@ -1088,32 +1182,13 @@ body {
   }
   
   .pig-bubble {
-    bottom: 80px;
+    bottom: 75px;
     left: -5px;
   }
   
   .dog-bubble {
-    bottom: 80px;
+    bottom: 75px;
     right: -5px;
-  }
-  
-  @keyframes dogJumpIn {
-    0%, 15% {
-      right: -100px;
-      transform: translateY(0) rotate(0deg);
-    }
-    20% {
-      right: -50px;
-      transform: translateY(-30px) rotate(-10deg);
-    }
-    25% {
-      right: 15px;
-      transform: translateY(0) rotate(0deg);
-    }
-    70%, 100% {
-      right: 15px;
-      transform: translateY(0) rotate(0deg);
-    }
   }
 }
 
