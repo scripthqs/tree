@@ -723,22 +723,22 @@ body {
 }
 
 @keyframes pigMovement {
-  0%, 20% {
+  0%, 33% {
     left: 50%;
     transform: translateX(-50%) rotate(0deg);
     z-index: 5;
   }
-  30%, 33% {
+  38% {
     left: 50%;
     transform: translateX(-50%) rotate(-180deg);
     z-index: 5;
   }
-  38% {
+  43% {
     left: 20px;
     transform: translateX(0) rotate(-360deg);
     z-index: 2;
   }
-  40%, 100% {
+  48%, 100% {
     left: 20px;
     transform: translateX(0) rotate(-360deg);
     z-index: 2;
@@ -786,9 +786,10 @@ body {
   position: absolute;
   background: white;
   border-radius: 15px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  max-width: 200px;
+  min-width: 100px;
+  max-width: 140px;
   font-size: 0.85em;
   font-weight: bold;
   line-height: 1.4;
@@ -818,7 +819,7 @@ body {
 }
 
 .dog-bubble {
-  bottom: 70px;
+  bottom: 85px;
   right: -10px;
   color: #ff6b00;
 }
@@ -833,16 +834,14 @@ body {
 .bubble-text {
   display: block;
   opacity: 0;
-  animation-fill-mode: forwards;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
-  transition: height 0.3s;
 }
 
 .bubble-text.bubble-1,
 .bubble-text.bubble-2,
 .bubble-text.bubble-3 {
-  animation-fill-mode: forwards;
+  /* 动画控制显示隐藏 */
 }
 
 /* 猪猪的两句话 */
@@ -860,73 +859,56 @@ body {
 }
 
 @keyframes pigBubble1Animation {
-  0% {
+  0%, 5% {
     opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
-  6.25% {
-    /* 0.5s */
+  6%, 28% {
     opacity: 1;
-    height: auto;
+    max-height: 100px;
+    overflow: visible;
   }
-  28.75% {
-    /* 2.3s */
-    opacity: 1;
-    height: auto;
-  }
-  31.25% {
-    /* 2.5s */
+  30%, 100% {
     opacity: 0;
-    height: 0;
-  }
-  100% {
-    opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
 }
 
 @keyframes pigBubble3Animation {
-  0%,
-  49.9% {
-    /* 0-4s */
+  0%, 48% {
     opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
-  50% {
-    /* 4s */
+  50%, 93% {
     opacity: 1;
-    height: auto;
+    max-height: 100px;
+    overflow: visible;
   }
-  99.9% {
-    opacity: 1;
-    height: auto;
-  }
-  100% {
+  95%, 100% {
     opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
 }
 
 @keyframes dogBubble2Animation {
-  0%,
-  32.4% {
-    /* 0-2.6s */
+  0%, 31% {
     opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
-  32.5% {
-    /* 2.6s */
+  33%, 48% {
     opacity: 1;
-    height: auto;
+    max-height: 100px;
+    overflow: visible;
   }
-  49.9% {
-    opacity: 1;
-    height: auto;
-  }
-  50% {
-    /* 4s */
+  50%, 100% {
     opacity: 0;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
   }
   100% {
     opacity: 0;
