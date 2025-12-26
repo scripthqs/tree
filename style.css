@@ -773,6 +773,78 @@ body {
   .decoration {
     font-size: 1.5em;
   }
+  
+  .tree {
+    width: 160px;
+    height: 200px;
+  }
+  
+  .star-top {
+    font-size: 1.5em;
+  }
+  
+  .tree-part {
+    margin: -6px 0;
+  }
+  
+  .tree-1 {
+    border-width: 0 25px 35px 25px;
+  }
+  
+  .tree-2 {
+    border-width: 0 38px 42px 38px;
+  }
+  
+  .tree-3 {
+    border-width: 0 50px 50px 50px;
+  }
+  
+  .tree-4 {
+    border-width: 0 62px 58px 62px;
+  }
+  
+  .tree-trunk {
+    width: 25px;
+    height: 35px;
+  }
+  
+  .ornament {
+    font-size: 1em;
+  }
+  
+  .ornament-1 {
+    top: 50px;
+    left: 70px;
+  }
+  
+  .ornament-2 {
+    top: 68px;
+    right: 58px;
+  }
+  
+  .ornament-3 {
+    top: 93px;
+    left: 45px;
+  }
+  
+  .ornament-4 {
+    top: 108px;
+    right: 42px;
+  }
+  
+  .ornament-5 {
+    top: 133px;
+    left: 28px;
+  }
+  
+  .ornament-6 {
+    top: 133px;
+    right: 25px;
+  }
+  
+  .tree-message {
+    font-size: 1em;
+  }
 }
 
 /* 横屏适配 */
