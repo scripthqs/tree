@@ -851,12 +851,12 @@ body {
 }
 
 .pig-bubble .bubble-3 {
-  animation: showTextWithHeight 1s 4s forwards;
+  animation: hideTextWithHeight 0s 0s forwards, showTextWithHeight 1s 4s forwards, hideTextWithHeight 0s 8s forwards;
 }
 
 /* 小狗的话 */
 .dog-bubble .bubble-2 {
-  animation: showTextWithHeight 1s 2.6s forwards;
+  animation: hideTextWithHeight 0s 0s forwards, showTextWithHeight 1s 2.6s forwards, hideTextWithHeight 0s 8s forwards;
 }
 
 @keyframes showTextWithHeight {
